@@ -51,7 +51,7 @@ def main():
         st.title(':grey[Welcome to Insurance Prediction]')
         
         st.header('About the Project:')
-        st.write("This project is aimed at predicting insurance outcomes using advanced machine learning techniques.")
+        st.write("This project is aimed at predicting insurance outcomes using advanced machine learning techniques")
         
         st.header('Creator Profile:')
         st.write('**Creator:** Yaseen Ijaz')
