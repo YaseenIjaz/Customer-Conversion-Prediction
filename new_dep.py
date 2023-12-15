@@ -51,7 +51,7 @@ def main():
         st.title(':grey[Welcome to Insurance Prediction]')
         
         st.header('About the Project:')
-        st.write("This project is aimed at predicting insurance outcomes using advanced machine learning techniques")
+        st.write("This project is aimed at predicting insurance outcomes using advanced machine learning techniques.")
         
         st.header('Creator Profile:')
         st.write('**Creator:** Yaseen Ijaz')
@@ -66,11 +66,11 @@ def main():
         st.write('- Machine Learning Libraries (e.g., scikit-learn, XGBoost)')
         
         st.header('How to Use:')
-        st.write('Navigate to the "PREDICTION" page to make predictions for insurance outcomes.')
+        st.write('Navigate to the "PREDICTION" page to make predictions for insurance outcomes'.)
         
     elif page == "PREDICTION":
         st.title('Insurance Prediction Page')
-        st.write('This page allows you to make predictions for insurance outcomes.
+        st.write('This page allows you to make predictions for insurance outcomes.)
                  
     if page == "PREDICTION":
         st.title('PREDICTION')
