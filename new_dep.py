@@ -2,12 +2,7 @@
 import pickle
 import pandas as pd
 import streamlit as st
-import os
 import xgboost as xgb
-
-
-
-os.chdir(r"C:\Users\Imthiyas\Documents\Python Practise Ijaz")
 
 from PIL import Image
 months_dict = {
@@ -27,18 +22,16 @@ months_dict = {
 
 
 data=pd.read_csv("https://raw.githubusercontent.com/YaseenIjaz/Customer-Conversion-Prediction/main/train%20(1).csv")
-file_path=r"C:\Users\Imthiyas\Documents\Python Practise Ijaz\classifier.pkl"
+file_path="classifier.pkl"
 
-if os.path.exists(file_path):
-    with open(file_path, "rb") as pickle_in:
-        loaded_classifier = pickle.load(pickle_in)
-else:
-    print(f"Error: File {file_path} not found.")
+
+with open(file_path, "rb") as pickle_in:
+    loaded_classifier = pickle.load(pickle_in)
 
 
 def main():
     # Create a page dropdown
-    image = Image.open(r"C:\Users\Imthiyas\Downloads\Blue MMinimalist Medical Clinic Logo.jpg")
+    image = Image.open("logo.jpg")
     st.set_page_config(page_title="Insurance Prediction",page_icon='🧑‍⚕️',layout="wide",initial_sidebar_state="expanded")
     st.sidebar.image(image, width=100)
     st.sidebar.title("Insurance Prediction")
@@ -77,13 +70,8 @@ def main():
         
     elif page == "PREDICTION":
         st.title('Insurance Prediction Page')
-        st.write('This page allows you to make predictions for insurance outcomes.')
-        
-        # Add your prediction code here
-
-
-
-
+        st.write('This page allows you to make predictions for insurance outcomes.
+                 
     if page == "PREDICTION":
         st.title('PREDICTION')
         age_placeholder = st.text_input("Enter the Age", key="age_placeholder")
