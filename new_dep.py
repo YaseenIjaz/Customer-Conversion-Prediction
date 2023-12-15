@@ -196,21 +196,16 @@ def main():
 
 
 
-        st.write("Input Data:")
-        st.write(input)
-
-# Make the prediction
-        if st.button("Predict"):
-            valu = loaded_classifier.predict(input)
-            if valu == 0:
-                st.write('DECLINED')
-            else:
-                st.write('ACCEPTED')
-                st.snow()
-
-        if st.button("About"):
-            st.text("Lets Learn")
-            st.text("Built with Streamlit")
+        if input.applymap(lambda x: isinstance(x, (int, float))).all().all():
+            if st.button("Predict"):
+                valu = loaded_classifier.predict(input)
+                if valu == 0:
+                    st.error('DECLINED')
+                else:
+                    st.success('ACCEPTED')
+                    st.snow()
+        else:
+            st.warning('Please ensure that all informations are entered.')
 
 if __name__=='__main__':
     main()
